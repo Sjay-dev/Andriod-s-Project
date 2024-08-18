@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "755054831529",
+    "project_id": "xmlsignup-and-login",
+    "storage_bucket": "xmlsignup-and-login.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755054831529:android:52a81787501f1a026b86b8",
+        "android_client_info": {
+          "package_name": "com.example.xmlsignupandlogin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2GV89IakfObl8lIu-QZA8My7feuyGido"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
