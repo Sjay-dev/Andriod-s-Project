@@ -13,7 +13,7 @@ class Sign_In : AppCompatActivity() {
         private lateinit var binding: SignInBinding
         lateinit var firebaseAuth: FirebaseAuth
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+         override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = SignInBinding.inflate(layoutInflater)
 
@@ -26,13 +26,20 @@ class Sign_In : AppCompatActivity() {
 
 
         binding.button.setOnClickListener{
+            val name = binding.NameEt.text.toString()
             val email = binding.emailEt.text.toString()
             val pass = binding.passET.text.toString()
 
-            if(email.isNotEmpty() && pass.isNotEmpty()){
+            if(name.isNotEmpty() && email.isNotEmpty() && pass.isNotEmpty()){
                 firebaseAuth.signInWithEmailAndPassword(email , pass).addOnCompleteListener{
                     if (it.isSuccessful){
-                        startActivity(Intent(this , MainActivity::class.java))
+                      val bundle : Bundle = Bundle().apply {
+                          putString("Name" , name)
+                      }
+                        val  intent : Intent = Intent(this , MainActivity::class.java)
+                        intent.putExtras(bundle)
+                        startActivity(intent)
+
                     }
                     else{
                         Toast.makeText(this , it.toString() , Toast.LENGTH_SHORT).show()
